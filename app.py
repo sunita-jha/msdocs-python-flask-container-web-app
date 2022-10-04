@@ -91,7 +91,7 @@ def add_restaurant():
     except (KeyError, RequestException) as e:
         # Redisplay the restaurant entry form.
         return render_template('create_restaurant.html', 
-            message='Restaurant not added. Include at least a restaurant name and description.')  
+            message='Restaurant not added. Include at least a restaurants name and description.')  
     else:
         collection = mongodb.get_collection()
         restaurant = mongodb.create_restaurant_record(name, street_address, description)
